@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="row m_bottom_5">
+    <div class="container m_top_1">
+        <div class="col-xs-4 col-xs-offset-4">
+            <img class="img-circle" src="./img/wanmei_41.png" width="100%" alt="">
+        </div>
+        <div class="col-xs-4 col-xs-offset-4 t_center m_top_1">
+            完美用户123
+        </div>
+    </div>
+    <div class="row m_top_1">
+        <div class="container">
+            <div class="col-xs-12 border_bottom">
+                <img class="caidan" src="./img/caidan.png" alt="">
+                我的订单
+            </div>
+        </div>
+        <div class="row m_top_1 t_center center_img">
+            <div class="col-xs-3">
+                <img src="./img/wanmei_30.png" alt="">
+                <div class="col-xs-12">我的订单</div>
+            </div>
+            <div class="col-xs-3">
+                <img src="./img/wanmei_32.png" alt="">
+                <div class="col-xs-12">待发货</div>
+            </div>
+            <div class="col-xs-3">
+                <img src="./img/wanmei_37.png" alt="">
+                <div class="col-xs-12">待发货</div>
+            </div>
+            <div class="col-xs-3">
+                <img src="./img/wanmei_36.png" alt="">
+                <div class="col-xs-12">交易成功</div>
+            </div>
+        </div>
+    </div>
+    <div class="row m_top_2">
+        <div class="container">
+            <div class="col-xs-12 border_bottom">
+                <img class="caidan" src="./img/1.png" alt="">
+                物流详情
+            </div>
+        </div>
+        <div class="row m_top_1 t_center center_img">
+            <div class="col-xs-3">
+                <img src="./img/wanmei_59.png" alt="">
+                <div class="col-xs-12">快递跟踪</div>
+            </div>
+        </div>
+    </div>
+    <div class="container t_center f_size_2 m_top_2">
+        热门推荐
+    </div>
+    <div class="row">
+        <a href="details.html">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-xs-12 things">
+                    <img src="./img/22.png" width="100%" alt="">
+                    <div class="col-xs-12">完美早餐营养粉 680g/罐</div>
+                    <div class="col-xs-12">¥ 485.00</div>
+                </div>
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-xs-12 things">
+                    <img src="./img/33.png" width="100%" alt="">
+                    <div class="col-xs-12">完美早餐营养粉 680g/罐</div>
+                    <div class="col-xs-12">¥ 485.00</div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!--底部导航-->
+<nav class="navbar navbar-default navbar-fixed-bottom footer">
+    <div class="container">
+        <div class="col-xs-3">
+            <a href="index.html">
+                <img src="./img/wanmei_71.png" alt="">
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a href="">
+                <img src="./img/wanmei_73.png" alt="">
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a href="center.html">
+                <img src="./img/wanmei_35.png" alt="">
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a href="order.html">
+                <img src="./img/wanmei_34.png" alt="">
+            </a>
+        </div>
+    </div>
+</nav>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    var mySwiper = new Swiper('#swiper1',{
+        slidesPerView: 4,//一个页面显示导航个数
+        spaceBetween: 10,//两个导航之间的间隔
+        scrollbar: {
+            el: '.swiper-scrollbar',//滑动滚动条
+            dragSize: 50,//滚动条长度
+        },
+        preventClicks : false,//阻止滑动冒泡
+        preventLinksPropagation : false,
+    });
+
+    $('.removeed').click(function () {
+        $(this).parents('.orders').remove();
+    });
+</script>
+</html>

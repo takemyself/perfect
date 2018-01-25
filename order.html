@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top top">
+    <div class="container">
+        <div class="swiper-container" id="swiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;">全部</a></div>
+                <div class="swiper-slide"><a href="javascript:;">待付款</a></div>
+                <div class="swiper-slide"><a href="javascript:;">待发货</a></div>
+                <div class="swiper-slide"><a href="javascript:;">待收货</a></div>
+                <div class="swiper-slide"><a href="javascript:;">未评价</a></div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</nav>
+
+<div class="row m_top_5 m_bottom_5">
+    <div class="row m_bottom_1 orders">
+        <div class="container">
+            <div class="col-xs-12 border_bottom line_height_3">
+                订单编号 : 132465
+                <a href="javascript:;" class="removeed"><img class="remove_order" style="" src="./img/wanmei_08.png"></a>
+            </div>
+        </div>
+        <div class="row m_top_1">
+            <div class="col-xs-3 p_0">
+                <img src="./img/33.png" width="100%" alt="">
+            </div>
+            <div class="col-xs-8 p_0">
+                <div class="row">
+                    完美餐牌肽藻营养粉 680g/罐+145g/瓶+10g/包*30
+                </div>
+                <div class="row m_top_1 f_size_1_half line_height_3">
+                    <div class="col-xs-4 col-xs-offset-4">交易成功</div>
+                    <div class="col-xs-4 border_all"><a href="javascript:;" class="color_red">再次购买</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m_bottom_1 orders">
+        <div class="container">
+            <div class="col-xs-12 border_bottom line_height_3">
+                订单编号 : 13246544
+                <a href="javascript:;" class="removeed"><img class="remove_order" src="./img/wanmei_08.png"></a>
+            </div>
+        </div>
+        <div class="row m_top_1">
+            <div class="col-xs-3 p_0">
+                <img src="./img/33.png" width="100%" alt="">
+            </div>
+            <div class="col-xs-8 p_0">
+                <div class="row">
+                    完美餐牌肽藻营养粉 680g/罐+145g/瓶+10g/包*30
+                </div>
+                <div class="row m_top_1 f_size_1_half line_height_3">
+                    <div class="col-xs-4 col-xs-offset-4">交易成功</div>
+                    <div class="col-xs-4 border_all"><a href="javascript:;" class="color_red">再次购买</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部导航-->
+<nav class="navbar navbar-default navbar-fixed-bottom footer">
+    <div class="container">
+        <div class="col-xs-3">
+            <a href="index.html">
+                <img src="./img/wanmei_71.png" alt="">
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a href="">
+                <img src="./img/wanmei_73.png" alt="">
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a href="center.html">
+                <img src="./img/wanmei_35.png" alt="">
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a href="order.html">
+                <img src="./img/wanmei_34.png" alt="">
+            </a>
+        </div>
+    </div>
+</nav>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    var mySwiper = new Swiper('#swiper1',{
+        slidesPerView: 4,//一个页面显示导航个数
+        spaceBetween: 10,//两个导航之间的间隔
+        scrollbar: {
+            el: '.swiper-scrollbar',//滑动滚动条
+            dragSize: 50,//滚动条长度
+        },
+        preventClicks : false,//阻止滑动冒泡
+        preventLinksPropagation : false,
+    });
+
+    $('.removeed').click(function () {
+        $(this).parents('.orders').remove();
+    });
+</script>
+</html>
