@@ -11,43 +11,46 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-<div class="container m_top_1 m_bottom_5">
-    <div class="row">
-        <img src="./img/22.png" width="100%" alt="">
-    </div>
-    <div class="row">
-        完美早餐营养粉 680g/罐
-    </div>
-    <div class="row">
+<div class="row m_bottom_5">
+    <div class="container m_top_1">
+        <div class="row">
+            <img src="./img/22.png" width="100%" alt="">
+        </div>
+        <div class="row">
+            完美早餐营养粉 680g/罐
+        </div>
+        <div class="row">
         <span class="col-xs-6 p_0 f_size_2">
             ¥850.00
         </span>
-        <span class="col-xs-6 m_top_half p_0 t_right">
+            <span class="col-xs-6 m_top_half p_0 t_right">
             已售32件
         </span>
-    </div>
-    <div class="row border_all">
-        <div class="col-xs-6 p_0" style="line-height: 4rem;text-indent: 2rem">购买数量</div>
-        <div class="col-xs-6 quan m_top_half">
-            <!--disabled 可控制按钮-->
-            <div class="col-xs-4">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default">-</button>
+        </div>
+        <div class="row border_all">
+            <div class="col-xs-6 p_0" style="line-height: 4rem;text-indent: 2rem">购买数量</div>
+            <div class="col-xs-6 quan m_top_half">
+                <!--disabled 可控制按钮-->
+                <div class="col-xs-4">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default mius">-</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-4">
-                <div class="btn-group">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="1">
+                <div class="col-xs-4">
+                    <div class="btn-group">
+                        <input type="text" class="form-control val" value="1" placeholder="1">
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-4">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default">+</button>
+                <div class="col-xs-4">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default adds">+</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!--商品详情-->
 <div class="row t_center">
@@ -75,28 +78,22 @@
 </div>
 
 <!--底部导航-->
-<nav class="navbar navbar-default navbar-fixed-bottom footer">
-    <div class="container">
-        <div class="col-xs-3">
-            <a href="index.html">
-                <img src="./img/wanmei_71.png" alt="">
-            </a>
+<nav class="navbar navbar-default navbar-fixed-bottom detailfooter">
+    <div class="row line_height_6">
+        <div class="col-xs-4">
+            <div class="col-xs-6 p_0">
+                <a href="index.html">
+                    <img src="./img/wanmei_71.png" alt="">
+                </a>
+            </div>
+            <div class="col-xs-6 p_0">
+                <a href="">
+                    <img src="./img/wanmei_73.png" alt="">
+                </a>
+            </div>
         </div>
-        <div class="col-xs-3">
-            <a href="">
-                <img src="./img/wanmei_73.png" alt="">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="center.html">
-                <img src="./img/wanmei_35.png" alt="">
-            </a>
-        </div>
-        <div class="col-xs-3">
-            <a href="order.html">
-                <img src="./img/wanmei_34.png" alt="">
-            </a>
-        </div>
+        <div class="col-xs-4 back_blue color_white">加入购物车</div>
+        <div class="col-xs-4 back_red color_white">立即购买</div>
     </div>
 </nav>
 </body>
@@ -111,6 +108,46 @@
         hashNavigation: {
             watchState: true,
         },
-    })
+    });
+
+    var myQuantity={
+        vals:1,
+        val:'',//input
+        adds:'',//加
+        miuss:'',//减
+
+        isNum:function (oval) {
+            if(isNaN(oval)){
+                oval=this.vals;
+            };
+            if (oval<1){
+                oval=1;
+            };
+            this.vals=oval;
+            this.val.val(this.vals);
+        },
+
+        toDo:function (This) {
+            this.adds.click(function () {
+                This.isNum(This.vals+1);
+            });
+            this.miuss.click(function () {
+                This.isNum(This.vals-1)
+            });
+            this.val.bind('input propertychange', function() {
+                This.isNum(Number(This.val.val()));
+            });
+        },
+
+        init:function (vals,adds,mius) {
+            This=this;
+            this.val=$(vals);
+            this.adds=$(adds);
+            this.miuss=$(mius);
+            this.isNum(Number(this.val.val()));
+            this.toDo(This);
+        },
+    };
+    myQuantity.init('.val','.adds','.mius');
 </script>
 </html>
